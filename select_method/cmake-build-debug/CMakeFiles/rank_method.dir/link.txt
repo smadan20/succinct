@@ -1,0 +1,1 @@
+/Library/Developer/CommandLineTools/usr/bin/c++  -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/rank_method.dir/main.cpp.o CMakeFiles/rank_method.dir/select_support.cpp.o  -o rank_method   -L/usr/local/lib 
