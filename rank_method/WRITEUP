@@ -9,7 +9,5 @@ Then I create a lookup table Rp which has the rank for each logn/2-size block ty
 Then for a given rank query, I sum up the results from each table to yield the final rank result.
 
 The hardest part of implementation:
-As is evident in my code, I unfortunately was unable to complete the implementation of rank.
-I ran into a myriad of issues with C++, which took up a disproportional majority of my time, that by the time I actually got to implementing the functions, I was running on very low time. This is largely due to my lack of C++ experience. 
+I ran into a myriad of issues with C++, which took up a disproportional majority of my time. This is largely due to my lack of C++ experience. 
 Importing the sdsl-lite (and BitArray) libraries took a lot of debugging, and once I got those to work my program didn't compile. The default compiler my system/IDE (Jetbrains CLion) was using was fundamentally flawed, I found out too late. So I switched to using g++, upon the kind suggestion of a fellow classmate on Piazza, and that ended up working.
-I know how to implement the rank support data structure and had I saved time not running into these issues, it would have benefitted me greatly. Unfortunately I was unable to complete it, but I learned a *lot* about C++ along the way and am grateful for that.
