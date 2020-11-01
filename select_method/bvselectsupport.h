@@ -13,34 +13,44 @@
 #include <string>
 #include <sdsl/int_vector.hpp>
 #include <sdsl/bit_vectors.hpp>
+#include "../rank_method/bvranksupport.h"
+
 
 using namespace std;
 using namespace sdsl;
 
-class select_support {
+class bvselectsupport {
 public:
 
-    bit_vector *bv;
+    sdsl::bit_vector bv;
 
-    select_support(bit_vector *bit) {
-        bv = bit;
+    bvselectsupport(bit_vector *bit) {
+        bv = *bit;
     }
 
     uint64_t select1(uint64_t i) {
-
-        // ran out of time as didn't finish implementation of rank1
-        // but would recursively call rank1 to compute select1
-
+        bvranksupport r(&bv);
+        int n = bv.size();
+        for (int x = n; x >= 0; x--) {
+            if (r.rank1(x) == i) {
+                return x;
+            }
+        }
     }
 
     uint64_t select0(uint64_t i) {
-
-
+        bvranksupport r(&bv);
+        int n = bv.size();
+        for (int x = n; x >= 0; x--) {
+            if (r.rank0(x) == i) {
+                return x;
+            }
+        }
     }
 
     uint64_t  overhead() {
-
-
+        bvranksupport r(&bv);
+        return r.overhead();
     }
 
     void save(string& fname) {
